@@ -18,11 +18,11 @@ Additional Files:
 
 1. Library Installation
 
-In addition to native Python libraries, we are using some additional Python libraries, so please make sure that you got the following libraries installed: **pandas**, **numpy**, **phe**, and **matplotlib**
+In addition to native Python libraries, we are using some additional Python libraries, so please make sure that you got the following libraries installed: **pandas**, **numpy**, **matplotlib**, **phe**, and **pycryptodome**
 
 You can check if you have them installed or not by typing the following command line into your terminal:
 ```python
-pip install pandas numpy phe matplotlib
+pip install pandas numpy matplotlib phe pycryptodome
 ```
 Or you can use the __requirements.txt__ file:
 ```python
