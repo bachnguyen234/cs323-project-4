@@ -37,8 +37,12 @@ Results are printed directly in the notebook.
 
 ## Major Design Decisions
 
-- **Consistent Randomized Input Generation**  
-All methods (baseline - no encryption, Paillier, and Shamir) operate on randomly generated integer datasets of size $n$, drawn uniformly between predefined minimum and maximum values. A fixed random seed is set before each run to ensure reproducibility of results and consistency across experiments. This guarantees that every algorithm processes identical input data for fair performance comparison.
+**Consistent Randomized Input Generation**
+All methods (Baseline - no encryption, Paillier, and Shamir) operate on the same randomly generated integer dataset for each sample size $n$. Values are drawn uniformly between predefined minimum and maximum bounds. A fixed random seed is set before each run to ensure reproducibility of results and consistency across experiments. This ensures every method processes identical input data for fair performance comparison.
 
-- **Fixed Cryptographic Parameters**  
-  The Paillier encryption setup uses a single key pair for all test cases to maintain consistency in encryption and decryption overhead. Shamir’s Secret Sharing uses a fixed number of parties ($10$) and a constant threshold ($𝑡=5$) across all runs, providing controlled scalability analysis.
+**Dynamic Cryptographic Parameters**
+Paillier encryption uses a single 3072-bit key pair for all tests to ensure consistent encryption and decryption overhead across varying dataset sizes.
+Shamir’s Secret Sharing dynamically adjusts parameters per dataset size:
+- The number of parties equals the dataset size ($n$)
+- The reconstruction threshold is set to $t=⌊n/2⌋$
+- A fixed 3072-bit prime $p$ is generated for share computation
