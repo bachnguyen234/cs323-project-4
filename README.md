@@ -1,15 +1,15 @@
-# CS 323 - Project 3: Secret Sharing
+# CS 323 - Project 4: Secret Sharing
 Author: Bach Nguyen
 
-This contains the code and analysis for **Project 3: Secret Sharing** for the course CS 323: Data Privacy
+This contains the code and analysis for **Project 4: Secret Sharing** for the course CS 323: Data Privacy
 
 ## Project Overview
 
-This project implements and benchmarks secure mean computation methods using **Paillier Homomorphic Encryption** and **Shamir’s Secret Sharing (SSS)**. The goal is to evaluate the computational efficiency of different privacy-preserving approaches compared to a non-encrypted baseline. The analysis measures runtime performance across varying data sizes ($n$) to assess scalability and computational cost. All experiments were conducted under consistent parameter settings, with Paillier encryption using a fixed key pair and Shamir’s scheme configured with a constant party count and threshold.
+This project implements and benchmarks secure mean computation methods using **Paillier Homomorphic Encryption** and **Shamir’s Secret Sharing (SSS)** as well as **Differential Privacy**. The goal is to evaluate the computational efficiency of different privacy-preserving approaches compared to a non-encrypted baseline. The analysis measures runtime performance across varying data sizes ($n$) to assess scalability and computational cost. All experiments were conducted under consistent parameter settings, with Paillier encryption using a fixed key pair, Shamir’s scheme configured with a constant party count and threshold, and Differential Privacy with a fixed privacy cost of $1.0$.
 
 ## Project Structure 
 The project consists of 3 files (including this README):
-- __cs323_project_3.ipnyb__: The main Jupyter Notebook that contains all of the code needed to run this project.
+- __cs323_project_4.ipnyb__: The main Jupyter Notebook that contains all of the code needed to run this project.
 
 Additional Files:
 - __requirements.txt__: Text file containing names of non-native Python libraries needed to run the code
@@ -38,7 +38,7 @@ Results are printed directly in the notebook.
 ## Major Design Decisions
 
 **Consistent Randomized Input Generation**
-All methods (Baseline - no encryption, Paillier, and Shamir) operate on the same randomly generated integer dataset for each sample size $n$. Values are drawn uniformly between predefined minimum and maximum bounds. A fixed random seed is set before each run to ensure reproducibility of results and consistency across experiments. This ensures every method processes identical input data for fair performance comparison.
+All methods (Baseline - no encryption, Paillier, Shamir, and Differential Privacy) operate on the same randomly generated integer dataset for each sample size $n$. Values are drawn uniformly between predefined minimum and maximum bounds. A fixed random seed is set before each run to ensure reproducibility of results and consistency across experiments. This ensures every method processes identical input data for fair performance comparison.
 
 **Dynamic Cryptographic Parameters**
 Paillier encryption uses a single 3072-bit key pair for all tests to ensure consistent encryption and decryption overhead across varying dataset sizes.
