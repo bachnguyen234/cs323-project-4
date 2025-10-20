@@ -49,6 +49,5 @@ Shamir’s Secret Sharing dynamically adjusts parameters per dataset size:
 - A fixed 3072-bit prime $p$ is generated for share computation
 
 **Differential Privacy Implementation**
-- The Differential Privacy (DP) approach applies the Laplace mechanism with a fixed privacy budget of ($\epsilon = 1.0$).
-- DP computations are performed after the standard (non-private) mean is calculated, with Laplace noise added based on the bounded sensitivity:
-$\Delta f = \frac{(\text{max} - \text{min})}{n}$
+- The Differential Privacy (DP) approach applies the Laplace mechanism with a fixed privacy budget of ($\epsilon = 1.0$) and with public knowledge of $n$.
+- The computation first performs a standard (non-private) sum of the dataset, then adds Laplace noise calibrated to the global sensitivity of the query before averaging. This implementation guarantees that privacy loss is bounded by $\epsilon = 1.0$
