@@ -1,7 +1,7 @@
-# CS 323 - Project 4: Secret Sharing
+# CS 323 - Project 4: Differential Privacy
 Author: Bach Nguyen
 
-This contains the code and analysis for **Project 4: Secret Sharing** for the course CS 323: Data Privacy
+This contains the code and analysis for **Project 4: Differential Privacy** for the course CS 323: Data Privacy
 
 ## Project Overview
 
